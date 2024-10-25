@@ -18,7 +18,7 @@ This project fetches and displays GitHub profile information using AJAX.
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/your-username/github-profile-fetcher.git
+    git clone https://github.com/maxh33/profile-fetcher
     ```
 2. Navigate to the project directory:
     ```sh
