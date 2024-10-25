@@ -22,7 +22,7 @@ This project fetches and displays GitHub profile information using AJAX.
     ```
 2. Navigate to the project directory:
     ```sh
-    cd github-profile-fetcher
+    cd profile-fetcher
     ```
 
 ### Usage
