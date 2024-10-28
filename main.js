@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const followingElement = document.querySelector('#following');
         const linkElement = document.querySelector('#profile-link');
 
+    try {
         const xhr = new XMLHttpRequest();
         xhr.open('GET', 'https://api.github.com/users/maxh33', true);
         xhr.onreadystatechange = function() {
@@ -27,7 +28,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         };
         xhr.send();
-    });
+    } catch (error) {
+        console.error('Error fetching data:', error.message);
+    }
+});
 
 
 // Example of fetching GitHub profile data using the Fetch API
@@ -40,21 +44,27 @@ document.addEventListener('DOMContentLoaded', function() {
         //     const followersElement = document.querySelector('#followers');
         //     const followingElement = document.querySelector('#following');
         //     const linkElement = document.querySelector('#profile-link');
-
-        //     fetch('https://api.github.com/users/maxh33')
-        //         .then(function(res) {
-        //             return res.json();
-        //         })
-        //         .then(function(data) {
-        //         if (nameElement) nameElement.innerText = data.name;
-        //         if (usernameElement) usernameElement.innerText = data.login;
-        //         if (avatarElement) avatarElement.src = data.avatar_url;
-        //         if (followingElement) followingElement.innerText = data.following;
-        //         if (followersElement) followersElement.innerText = data.followers;
-        //         if (reposElement) reposElement.innerText = data.public_repos;
-        //         if (linkElement) linkElement.href = data.html_url;
-        //         })
-        //         .catch(function(err) {
-        //             console.error('Error fetching data:', err.message);
-        //         });
-        // })
+        //     try {
+        //          fetch('https://api.github.com/users/maxh33')
+        //              .then(function(res) {
+        //                  if (!res.ok) {
+        //                      throw new Error('Network response was not ok ' + res.statusText);
+        //                  }
+        //                  return res.json();
+        //             })
+        //             .then(function(data) {
+        //                 if (nameElement) nameElement.innerText = data.name;
+        //                 if (usernameElement) usernameElement.innerText = data.login;
+        //                 if (avatarElement) avatarElement.src = data.avatar_url;
+        //                 if (followingElement) followingElement.innerText = data.following;
+        //                 if (followersElement) followersElement.innerText = data.followers;
+        //                 if (reposElement) reposElement.innerText = data.public_repos;
+        //                 if (linkElement) linkElement.href = data.html_url;
+        //             })
+        //             .catch(function(err) {
+        //                 console.error('Error fetching data:', err.message);
+        //             });
+        //      } catch (error) {
+        //          console.error('Error fetching data:', error.message);
+        //      }
+        // });
